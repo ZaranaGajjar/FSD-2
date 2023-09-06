@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
      <One/>
+    sdhfdskgjlskegf
     hello zkg
     this is updated 2nd.
      </div>
