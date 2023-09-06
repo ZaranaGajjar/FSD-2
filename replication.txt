@@ -1,0 +1,49 @@
+Replication
+
+mongod --port 27019 --dbpath "D:\db\db1" --replSet rs1
+mongod --port 27020 --dbpath "D:\db\db2" --replSet rs1
+
+
+mongosh --port 27019
+show dbs
+rs.initiate({_id:"rs1",
+... members:[{_id:0, host:"127.0.0.1:27019"},{_id:1, host:"127.0.0.1:27020"}]})
+rs.status()
+db.demo.insertOne({name:"abc"})
+
+mongosh --port 27020
+ use hello
+db.getMongo().setReadPref("primaryPreferred")
+db.demo.find()
+db.demo.insertOne({age:23})
+
+GIT:
+git init
+git add -A
+git commit -m "Committed save"
+git remote add origin "https://github.com/ZaranaGajjar/FSD-2"
+git push origin master
+
+if already exist error:
+git remote
+git remote -v
+git remote remove origin
+git remote add origin "https://github.com/ZaranaGajjar/Trial"
+git push origin master
+
+React file upload
+git init
+git add .
+git commit -m "Committed save"
+git remote add origin "https://github.com/ZaranaGajjar/FSD-2"
+git push origin master
+
+update in any react file:
+git add src/App.js
+git commit -m "updated App.js" 
+git push origin 
+
+
+git status
+git branch -M branch1
+git checkout branch1
